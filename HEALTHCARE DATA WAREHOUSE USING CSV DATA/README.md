@@ -1,7 +1,8 @@
-Healthcare Data Warehouse Using CSV Data
+**Healthcare Data Warehouse Using CSV Data**
+
 A PostgreSQL data warehouse built from Synthea synthetic patient CSV data. The project implements a full ELT pipeline — raw ingestion, staging and cleansing, dimensional warehousing with SCD Type 2 history tracking, and an analytics layer of SQL queries demonstrating window functions, recursive CTEs, set operations, and cohort analysis.
 
-Architecture
+**Architecture**
 The pipeline follows a four layer design, each layer living in its own folder and numbered in execution order
 
 01_raw   Raw ingestion schema creation raw table DDL CSV loads copy row counts
@@ -9,10 +10,10 @@ The pipeline follows a four layer design, each layer living in its own folder an
 03_warehousing   Warehouse dimension and fact tables SCD2 merge logic indexes
 04_analytics   Analytics window functions recursive CTEs cohort analysis ad hoc reports
 
-1 Raw layer
+**1 Raw layer**
 Creates the raw staging and warehouse schemas defines raw tables all columns as TEXT to preserve source fidelity and loads each Synthea CSV file patients encounters conditions medications procedures observations immunizations allergies careplans devices imaging studies supplies organizations providers payers payer transitions via copy
 
-2 Staging layer
+**2 Staging layer**
 Casts raw TEXT columns into proper types dates numerics varchars and runs data quality checks row count reconciliation against raw duplicate detection referential integrity date sanity checks and negative number checks
 
 3 Warehouse layer
@@ -35,22 +36,22 @@ Cohort Analysis medication based patient cohorts adherence calculations
 
 Ad hoc reports 2021 medication patients average cost by drug class and city patient summaries condition changes by city
 
-Tech Stack
+**Tech Stack**
 Database PostgreSQL
 Data source Synthea synthetic patient records CSV
 Tooling psql copy for bulk loads
 
-Prerequisites
+**Prerequisites**
 PostgreSQL tested on PostgreSQL 13 plus
 psql command line client
 Synthea generated CSV files patients encounters conditions medications procedures observations immunizations allergies careplans devices imagingstudies supplies organizations providers payers payer_transitions
 
-Setup
+**Setup**
 1 Generate or obtain Synthea CSV data and note the folder path
 2 Update CSV file paths in 01_raw loading csv sql each copy statement points to a local path and will need updating to match your environment
 3 Run the scripts in order layer by layer
 
-Example
+**Example**
 psql -d your_database -f 01_raw 00_create_schema sql
 psql -d your_database -f 01_raw 01_creating_raw_tables sql
 psql -d your_database -f 01_raw 02_loading_allergies_csv sql
