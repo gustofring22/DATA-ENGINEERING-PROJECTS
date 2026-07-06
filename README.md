@@ -1,27 +1,38 @@
-Data Engineering Portfolio
+# Data Engineering Portfolio 🛠️
 
-A collection of data engineering projects demonstrating skills in pipeline design, data modeling, orchestration, and analytics infrastructure. Each project lives in its own subfolder with a dedicated README covering setup, architecture, and key decisions.
+A collection of data engineering projects showcasing 
+end-to-end pipeline development, warehouse design, 
+and production-grade data infrastructure.
 
-About Me
+---
 
-Data engineer focused on building reliable, scalable pipelines that turn raw data into trustworthy, query-ready datasets. Comfortable working across the stack — from ingestion and orchestration to warehousing and transformation — with an emphasis on data quality, observability, and maintainable code.
+## 🛠️ Tech Stack
 
-LinkedIn · Email · Resume
+**Core**
+`SQL` `Python` `PostgreSQL`
 
-Skills & Technologies
+**Pipelines & Orchestration**
+`Apache Airflow` `dbt` `ETL/ELT`
 
-Languages: Python, SQL, Bash
+**Infrastructure**
+`Docker` `Terraform` `Apache Spark`
 
-Orchestration: Airflow, Dagster, Prefect
+**Other**
+`Git` `Jupyter`
 
-Data Warehousing: Snowflake, BigQuery, Redshift, PostgreSQL
+---
 
-Transformation: dbt, Spark, Pandas
+## 📂 Repository Structure
 
-Streaming: Kafka, Kinesis
+Each project lives in its own folder with:
+- A dedicated README explaining the architecture
+- SQL scripts organised by layer (raw → staging → warehouse)
+- Pipeline and orchestration code
+- Documentation and schema diagrams
 
-Cloud: AWS (S3, Glue, Lambda, EMR), GCP (BigQuery, Cloud Functions)
+---
 
-Infrastructure: Docker, Terraform, CI/CD (GitHub Actions)
+## 📬 Connect
 
-Other: Data modeling, ETL/ELT design, data quality testing (Great Expectations), API integration
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Lewis_Ngugi_Maina-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/lewisngugi)
+[![GitHub](https://img.shields.io/badge/GitHub-gustofring22-181717?style=flat&logo=github)](https://github.com/gustofring22)
