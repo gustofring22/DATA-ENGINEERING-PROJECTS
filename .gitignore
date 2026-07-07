@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+01_healthcare_data_warehouse/.env
+
+*.csv
+*.dump
+.env
+data/
