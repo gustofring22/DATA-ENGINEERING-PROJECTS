@@ -1,6 +1,6 @@
 # 🏥 Healthcare Data Warehouse — Synthea Dataset
 
-A production-style healthcare data warehouse built on the [Synthea](https://kaggle.com/datasets/paulbacher/synthea) synthetic patient dataset using PostgreSQL. This project demonstrates end-to-end data engineering — from raw CSV ingestion through to an analytics-ready warehouse — following real-world patterns used in clinical data infrastructure.
+A production-style healthcare data warehouse built on the [Synthea](https://kaggle.com/datasets/paulbacher/synthea) synthetic patient dataset using PostgreSQL. This project demonstrates end-to-end data engineering - from raw CSV ingestion through to an analytics-ready warehouse following real-world patterns used in clinical data infrastructure.
 
 ---
 
@@ -23,18 +23,18 @@ A production-style healthcare data warehouse built on the [Synthea](https://kagg
 
 ## ✅ What This Demonstrates
 
-- **Three-layer pipeline** — raw → staging → warehouse with clear separation of concerns
-- **SCD Type 2** — full patient history tracking with record hashing, effective/expiry dates, and a transactional merge pattern
-- **Data quality** — duplicate checks, referential integrity validation, date and negative value checks across all domains
-- **Fact tables** — encounters, conditions, and medications joined to the dimension via point-in-time logic
-- **Advanced SQL** — window functions (ROW_NUMBER, LAG, NTILE, rolling averages), recursive CTEs, INTERSECT/EXCEPT/UNION ALL, cohort retention analysis
+- **Three-layer pipeline** : raw → staging → warehouse with clear separation of concerns
+- **SCD Type 2** : full patient history tracking with record hashing, effective/expiry dates, and a transactional merge pattern
+- **Data quality** : duplicate checks, referential integrity validation, date and negative value checks across all domains
+- **Fact tables** : encounters, conditions, and medications joined to the dimension via point-in-time logic
+- **Advanced SQL** : window functions (ROW_NUMBER, LAG, NTILE, rolling averages), recursive CTEs, INTERSECT/EXCEPT/UNION ALL, cohort retention analysis
 
 ---
 
 ## 🔧 How to Run
 
 1. Install PostgreSQL and pgAdmin
-2. Run scripts in numbered order within each folder — start with `01_raw/`
+2. Run scripts in numbered order within each folder - start with `01_raw/`
 3. For data loading, run from psql and pass your local data path:
 
 ```bash
@@ -49,12 +49,12 @@ psql -U postgres -d healthcare_dw \
 
 ## 🚀 What Could Be Improved
 
-- **Orchestration** — pipeline steps are currently run manually; Airflow DAGs would automate and schedule each layer
-- **Containerisation** — Docker would make the environment fully reproducible across machines
-- **Infrastructure as code** — Terraform could provision schemas, roles, and permissions automatically
-- **dbt** — transformation logic in `02_staging` and `03_warehousing` would benefit from dbt models with built-in testing and lineage
-- **Additional dimensions** — `dim_providers`, `dim_payers`, and `dim_organizations` would complete the dimensional model
-- **FHIR ingestion** — the next iteration of this project ingests the same clinical data in FHIR R4 format via a Python pipeline
+- **Orchestration** : pipeline steps are currently run manually; Airflow DAGs would automate and schedule each layer
+- **Containerisation** : Docker would make the environment fully reproducible across machines
+- **Infrastructure as code** : Terraform could provision schemas, roles, and permissions automatically
+- **dbt** : transformation logic in `02_staging` and `03_warehousing` would benefit from dbt models with built-in testing and lineage
+- **Additional dimensions** : `dim_providers`, `dim_payers`, and `dim_organizations` would complete the dimensional model
+- **FHIR ingestion** : the next iteration of this project ingests the same clinical data in FHIR R4 format via a Python pipeline
 
 ---
 
